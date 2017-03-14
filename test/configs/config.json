@@ -1,0 +1,3 @@
+{
+	"connection": "mongodb://username:password@myserver:27017"
+}

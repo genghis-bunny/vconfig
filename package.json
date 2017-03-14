@@ -1,0 +1,15 @@
+{
+  "name": "JConfigValidator",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha "
+  },
+  "devDependencies": {
+    "mocha": "^1.17.1",
+    "should": "^11.2.1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "z-schema": "^3.18.2"
+  }
+}
