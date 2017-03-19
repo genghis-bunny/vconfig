@@ -1,3 +1,4 @@
 {
-	"connection": "mongodb://username:password@myserver:27017"
+	"dbserver": "mongodb://username:password@myserver:27017",
+	"portt": 1234
 }

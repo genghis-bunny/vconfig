@@ -1,0 +1,69 @@
+{
+	"title": "A server configuration",
+	"description": "Configuration for server.\n Missing required properties are critical and absence of them will prevent the server from starting",
+	"required": ["dbserver","port"],
+	"additionalProperties": false,
+	"properties": {
+		"dbserver": {
+			"type": "string",
+			"description": "Database server connection URI. eg user:password@hostname:port/db"
+		},
+
+		"cache": {
+			"type": "object",
+			"properties": {
+				"redis": {
+					"type": "boolean",
+					"description": "Set to true to cache qname mapping on meta property."
+				},
+				
+				"clearOnStartup": {
+					"type": "boolean"
+				}
+			}
+		},
+
+
+		"logging": {
+			"type": "object",
+			"properties": {
+			
+				"logToFile": {
+					"type": "string",
+					"description": "Set to path of destination log file"
+				},
+
+				"loggingLevel": {
+					"type": "string",
+					"enum": ["emerg", "alert", "crit", "error", "warning", "notice", "info", "debug"],
+					"description": "When set to the enum value all transports (console, file and database logs) will log errors at the specified level or above"
+				},
+
+				"logToConsole": {
+					"type": "boolean",
+					"description": "Set to true to output logging to console."
+				},
+
+				"logToMongo": {
+					"type": "boolean",
+					"description": "Set to true to output into the logs collection in mongo db."
+				}
+			}
+		},
+
+		"compression": {
+			"type": "boolean",
+			"description": "Set to true to compress output from server."
+		},
+
+		"production": {
+			"type": "boolean",
+			"description": "Set to true if server is a production server."
+		},
+
+		"port": {
+			"type": "number",
+			"description": "The port number that the server will listen on."
+		}
+	}
+}
